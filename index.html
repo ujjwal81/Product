@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Product Details</title>
 
+<!-- PapaParse: used to parse the CSV data published from Google Sheets -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
 <style>
 
 *{
@@ -155,22 +158,116 @@ body{
 
 <script>
 
+// ====== GOOGLE SHEETS CONFIG ======
+//
+// Sheet ID pulled from your link. Make sure sharing is set to
+// "Anyone with the link" -> Viewer, then this URL pulls the sheet as CSV.
+//
+// If your product rows are on a tab OTHER than the first one, you need
+// that tab's gid. Open the tab in the browser and look at the URL --
+// it will end in "#gid=123456789". Put that number below.
+
+const SHEET_ID = "1fLroSPYKrZYq-BNCiAfdjO5d5nZjfsjmMZ_xzVruonM";
+const SHEET_GID = "0"; // change if your data isn't on the first tab
+
+const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${SHEET_GID}`;
+
+// Your sheet has one row per color variant. Code is unique PER COLOR,
+// so rows are grouped into a single product page by "Model" instead.
+// The URL for a product page is: ?id=<Model name, URL-encoded>
+
+// ====== END CONFIG ======
+
+function parseCSV(csvText){
+
+    const result = Papa.parse(csvText, {
+        header:true,
+        skipEmptyLines:true
+    });
+
+    return result.data;
+}
+
+async function fetchCSV(url){
+
+    if(!url){
+        return [];
+    }
+
+    const response = await fetch(url + (url.includes("?") ? "&" : "?") + "cachebust=" + Date.now());
+
+    if(!response.ok){
+        throw new Error("Could not load sheet: " + url);
+    }
+
+    const text = await response.text();
+
+    return parseCSV(text);
+}
+
+// Builds the key used to group rows into one product.
+// Same Model name can exist in different Categories, so both are used together.
+function makeProductKey(model, category){
+    return model.trim() + "___" + category.trim();
+}
+
+async function loadProductsFromSheets(){
+
+    const rows = await fetchCSV(SHEET_CSV_URL);
+
+    const products = {};
+
+    rows.forEach(row => {
+
+        const model = (row["Model"] || "").trim();
+        const category = (row["Category"] || "").trim();
+
+        if(!model) return;
+
+        const key = makeProductKey(model, category);
+
+        if(!products[key]){
+
+            products[key] = {
+                name: model,
+                price: row["MRP (INR)"] || "",
+                code: row["Code"] || "",
+                category: category,
+                subSection: row["Sub-Section"] || "",
+                size: row["Size / Running Length"] || "",
+                description: row["Description"] || "",
+                notes: row["Notes / Must Order"] || "",
+                image: row["Image"] || "",
+                variants: []
+            };
+
+        }
+
+        products[key].variants.push({
+            color: row["Color"] || "",
+            code: row["Code"] || "",
+            price: row["MRP (INR)"] || "",
+            image: row["Image"] || ""
+        });
+
+    });
+
+    return products;
+
+}
+
 async function loadProduct(){
 
     const params = new URLSearchParams(window.location.search);
-    const productId = params.get("id");
+    const modelParam = params.get("model") || "";
+    const categoryParam = params.get("category") || "";
+    const productKey = makeProductKey(modelParam, categoryParam);
 
     try{
 
-        const response = await fetch("products.json?v=" + Date.now());
+        const products = await loadProductsFromSheets();
 
-        if(!response.ok){
-            throw new Error("products.json not found");
-        }
-
-        const products = await response.json();
-
-        const product = products[productId];
+        const product = products[productKey];
 
         if(!product){
 
@@ -205,7 +302,7 @@ async function loadProduct(){
 
                 <div class="row">
                     <span class="label">Product Code</span>
-                    <span>${product.code || ''}</span>
+                    <span id="mainCode">${product.code || ''}</span>
                 </div>
 
                 <div class="row">
@@ -245,6 +342,7 @@ async function loadProduct(){
                                      onclick="
                                         document.getElementById('mainImage').src='${v.image}';
                                         document.getElementById('mainPrice').innerText='${v.price}';
+                                        document.getElementById('mainCode').innerText='${v.code}';
                                      ">
 
                                     <img src="${v.image}"
