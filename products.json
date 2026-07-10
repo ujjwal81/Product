@@ -1,0 +1,81 @@
+{
+  "K-5402IN-ZZ-0": {
+    "category": "Smart Toilets & Bidet Seats",
+    "subSection": "Smart Toilets",
+    "name": "Veil Smart",
+    "code": "K-5402IN-ZZ-0",
+    "price": "₹870,000",
+    "description": "Veil Smart wall hung toilet with remote and Quiet-Close seat cover in white",
+    "notes": "Must order: External Pre-filter (K-1549469)"
+  },
+
+  "K-5401IN-0": {
+    "category": "Smart Toilets & Bidet Seats",
+    "subSection": "Smart Toilets",
+    "name": "Veil Smart",
+    "code": "K-5401IN-0",
+    "price": "₹850,000",
+    "description": "Veil Smart one-piece toilet with remote and Quiet-Close seat cover in white",
+    "notes": "Must order: External Pre-filter (K-1549469)"
+  },
+
+  "K-28529IN-0": {
+    "category": "Smart Toilets & Bidet Seats",
+    "subSection": "Smart Toilets",
+    "name": "Leap",
+    "code": "K-28529IN-0",
+    "price": "₹470,000",
+    "description": "Leap Smart one-piece elongated toilet with remote and Quiet-Close seat cover in white",
+    "notes": ""
+  },
+
+  "K-38519IN-0": {
+    "category": "Smart Toilets & Bidet Seats",
+    "subSection": "Smart Toilets",
+    "name": "PureWash E910 with Veil",
+    "code": "K-38519IN-0",
+    "price": "₹195,000",
+    "description": "Veil wall hung toilet with PureWash E910 electronic bidet seat cover with remote, in white",
+    "notes": "Must order: Electronic Bidet Installation Kit (K-1063956) & External Pre-Filter (K-1549469)"
+  },
+
+  "K-26995IN-2-0": {
+    "category": "Smart Toilets & Bidet Seats",
+    "subSection": "Smart Toilets",
+    "name": "PureWash E910 with Brazn",
+    "code": "K-26995IN-2-0",
+    "price": "₹191,000",
+    "description": "Brazn wall hung toilet with PureWash E910 electronic bidet seat cover with remote, in white",
+    "notes": "Must order: Electronic Bidet Installation Kit (K-1063956) & External Pre-Filter (K-1549469)"
+  },
+
+  "K-28786IN-0": {
+    "category": "Smart Toilets & Bidet Seats",
+    "subSection": "Smart Toilets",
+    "name": "C3-230 with Veil",
+    "code": "K-28786IN-0",
+    "price": "₹161,000",
+    "description": "Veil wall hung toilet with C3-230 electronic bidet seat cover with remote, in white",
+    "notes": "Must order: Electronic Bidet Installation Kit (K-1063956) & External Pre-Filter (K-1549469)"
+  },
+
+  "K-31014IN-0": {
+    "category": "Smart Toilets & Bidet Seats",
+    "subSection": "Smart Toilets",
+    "name": "C3-150 with Veil",
+    "code": "K-31014IN-0",
+    "price": "₹106,000",
+    "description": "Veil wall hung toilet with C3-150 electronic bidet seat cover in white",
+    "notes": "Must order: Electronic Bidet Installation Kit (K-1063956) & External Pre-Filter (K-1549469)"
+  },
+
+  "K-27792IN-0": {
+    "category": "Smart Toilets & Bidet Seats",
+    "subSection": "Smart Toilets",
+    "name": "Purewash E880 with ModernLife Edge",
+    "code": "K-27792IN-0",
+    "price": "₹121,000",
+    "description": "ModernLife Edge wall hung toilet with Purewash E-880 electronic bidet seat cover with remote, in white",
+    "notes": "Must order: External Pre-filter (K-1549469)"
+  }
+}
