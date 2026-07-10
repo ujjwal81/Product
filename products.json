@@ -90,20 +90,8 @@
     "price": "\u20b929,000",
     "description": "True rimless wall hung toilet with Quiet-Close UF slim seat cover in white \u2022 Vive wall hung bowl w/o seat in white (K-28780IN-0) \u2022 Vive Quiet-Close UF slim seat in white (K-28781IN-0)",
     "notes": "Must order: Plastic outlet connector (K-1527926)",
-    "image": "images/K-26998IN-0.jpg",
+    "image": "images/K-26998IN-0.png",
     "variants": [
-      {
-        "category": "1 Pc Toilets & Wall Hungs",
-        "subSection": "",
-        "name": "Vive",
-        "model": "Vive",
-        "code": "K-26998IN-0",
-        "color": "White",
-        "price": "\u20b929,000",
-        "description": "True rimless wall hung toilet with Quiet-Close UF slim seat cover in white \u2022 Vive wall hung bowl w/o seat in white (K-28780IN-0) \u2022 Vive Quiet-Close UF slim seat in white (K-28781IN-0)",
-        "notes": "Must order: Plastic outlet connector (K-1527926)",
-        "image": "images/K-26998IN-0.jpg"
-      },
       {
         "category": "1 Pc Toilets & Wall Hungs",
         "subSection": "",
@@ -114,7 +102,7 @@
         "price": "\u20b936,500",
         "description": "True rimless wall hung toilet with Quiet-Close UF slim seat cover in black \u2022 Vive wall hung bowl w/o seat in black (K-28780IN-7) \u2022 Vive Quiet-Close UF slim seat in black (K-28781IN-7)",
         "notes": "Must order: Plastic outlet connector (K-1527926)",
-        "image": "images/K-26998IN-7.jpg"
+        "image": "images/K-26998IN-7.png"
       },
       {
         "category": "1 Pc Toilets & Wall Hungs",
@@ -126,7 +114,7 @@
         "price": "\u20b936,500",
         "description": "True rimless wall hung toilet with Quiet-Close UF slim seat cover in teakberry \u2022 Vive wall hung bowl w/o seat in teakberry (K-28780IN-TKB) \u2022 Vive Quiet-Close UF slim seat in teakberry (K-28781IN-TKB)",
         "notes": "Must order: Plastic outlet connector (K-1527926)",
-        "image": "images/K-26998IN-TKB.jpg"
+        "image": "images/K-26998IN-TKB.png"
       },
       {
         "category": "1 Pc Toilets & Wall Hungs",
@@ -138,7 +126,7 @@
         "price": "\u20b936,500",
         "description": "True rimless wall hung toilet with PP seat cover in cashmere \u2022 Vive wall hung bowl w/o seat in cashmere (K-28780IN-K4) \u2022 Vive Quiet-Close round PP seat in cashmere (K-33818IN-K4)",
         "notes": "Must order: Plastic outlet connector (K-1527926)",
-        "image": "images/K-38991IN-K4.jpg"
+        "image": "images/K-38991IN-K4.png"
       }
     ]
   }
