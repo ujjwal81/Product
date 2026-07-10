@@ -41,9 +41,10 @@ button{
     border-radius:10px;
     text-align:center;
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
-    min-height:280px;
+    min-height:320px;
     box-shadow:0 2px 8px rgba(0,0,0,.1);
 }
 
@@ -106,8 +107,17 @@ async function loadProducts(){
             const qrDiv = document.createElement('div');
 
             card.appendChild(qrDiv);
-            container.appendChild(card);
 
+const codeDiv = document.createElement('div');
+codeDiv.style.marginTop = '8px';
+codeDiv.style.fontSize = '12px';
+codeDiv.style.fontWeight = 'bold';
+codeDiv.style.wordBreak = 'break-word';
+codeDiv.textContent = productCode;
+
+card.appendChild(codeDiv);
+
+container.appendChild(card);
             new QRCode(qrDiv,{
                 text:`https://ujjwal81.github.io/Product/?id=${encodeURIComponent(productCode)}`,
                 width:250,
