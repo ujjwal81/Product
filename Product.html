@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;Tile Product Details&lt;/title&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">body{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin:0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family:Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background:#f5f5f5;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.container{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>max-width:700px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin:20px auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background:white;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius:12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>overflow:hidden;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-shadow:0 2px 10px rgba(0,0,0,0.1);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.product-image{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width:100%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height:350px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>object-fit:cover;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.content{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding:20px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">h1{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top:0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.specs{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top:20px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.spec{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>justify-content:space-between;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding:10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-bottom:1px solid #eee;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.price{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size:28px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color:#0f766e;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight:bold;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin:20px 0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.inquiry-btn{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display:block;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width:100%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align:center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background:#0f766e;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color:white;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-decoration:none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding:15px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius:8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size:18px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.not-found{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align:center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding:50px;</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="app"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">const products = {</p>
+<p class="p2"><br></p>
+<p class="p1">1:{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>name:"Marble White Premium",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>image:"https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>size:"600 x 1200 mm",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>finish:"Glossy",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>thickness:"9 mm",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>price:"₹85/sq.ft.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>stock:"Available",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>description:"Premium marble finish vitrified tile suitable for living rooms and luxury interiors."</p>
+<p class="p1">},</p>
+<p class="p2"><br></p>
+<p class="p1">2:{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>name:"Italian Grey",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>image:"https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>size:"600 x 1200 mm",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>finish:"Matt",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>thickness:"9 mm",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>price:"₹95/sq.ft.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>stock:"Available",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>description:"Elegant Italian grey design perfect for modern homes."</p>
+<p class="p1">},</p>
+<p class="p2"><br></p>
+<p class="p1">3:{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>name:"Wooden Brown",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>image:"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>size:"200 x 1200 mm",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>finish:"Wood Finish",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>thickness:"10 mm",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>price:"₹78/sq.ft.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>stock:"Available",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>description:"Natural wood appearance with durability of vitrified tiles."</p>
+<p class="p1">},</p>
+<p class="p2"><br></p>
+<p class="p1">4:{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>name:"Concrete Stone",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>image:"https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>size:"800 x 800 mm",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>finish:"Matt",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>thickness:"10 mm",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>price:"₹92/sq.ft.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>stock:"Limited Stock",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>description:"Contemporary concrete look for commercial and residential projects."</p>
+<p class="p1">},</p>
+<p class="p2"><br></p>
+<p class="p1">5:{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>name:"Royal Beige",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>image:"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>size:"600 x 600 mm",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>finish:"Glossy",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>thickness:"8 mm",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>price:"₹72/sq.ft.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>stock:"Available",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>description:"Classic beige tile suitable for all spaces."</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">};</p>
+<p class="p2"><br></p>
+<p class="p1">const params = new URLSearchParams(window.location.search);</p>
+<p class="p1">const id = params.get("id");</p>
+<p class="p2"><br></p>
+<p class="p1">const product = products[id];</p>
+<p class="p2"><br></p>
+<p class="p1">if(product){</p>
+<p class="p2"><br></p>
+<p class="p1">document.getElementById("app").innerHTML = `</p>
+<p class="p1">&lt;div class="container"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;img class="product-image" src="${product.image}" alt="${product.name}"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="content"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;h1&gt;${product.name}&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;p&gt;${product.description}&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="price"&gt;${product.price}&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="specs"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="spec"&gt;</p>
+<p class="p1">&lt;span&gt;Size&lt;/span&gt;</p>
+<p class="p1">&lt;strong&gt;${product.size}&lt;/strong&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="spec"&gt;</p>
+<p class="p1">&lt;span&gt;Finish&lt;/span&gt;</p>
+<p class="p1">&lt;strong&gt;${product.finish}&lt;/strong&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="spec"&gt;</p>
+<p class="p1">&lt;span&gt;Thickness&lt;/span&gt;</p>
+<p class="p1">&lt;strong&gt;${product.thickness}&lt;/strong&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="spec"&gt;</p>
+<p class="p1">&lt;span&gt;Stock&lt;/span&gt;</p>
+<p class="p1">&lt;strong&gt;${product.stock}&lt;/strong&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;br&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;a href="tel:+919999999999" class="inquiry-btn"&gt;</p>
+<p class="p1">Call Showroom</p>
+<p class="p1">&lt;/a&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p1">`;</p>
+<p class="p2"><br></p>
+<p class="p1">}else{</p>
+<p class="p2"><br></p>
+<p class="p1">document.getElementById("app").innerHTML=`</p>
+<p class="p1">&lt;div class="not-found"&gt;</p>
+<p class="p1">&lt;h2&gt;Product Not Found&lt;/h2&gt;</p>
+<p class="p1">&lt;p&gt;Invalid Product ID&lt;/p&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p1">`;</p>
+<p class="p2"><br></p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
