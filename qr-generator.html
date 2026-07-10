@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;QR Code Generator&lt;/title&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">body{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin:20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family:Arial,sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background:#f5f5f5;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">h1{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align:center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom:20px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.actions{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align:center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom:20px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">button{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding:12px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size:16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor:pointer;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.grid{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>grid-template-columns:repeat(auto-fill,minmax(280px,1fr));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gap:20px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.card{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background:white;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding:15px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius:10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align:center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display:flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>align-items:center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>min-height:280px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-shadow:0 2px 8px rgba(0,0,0,.1);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">@media print{</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>body{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>background:white;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>margin:0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>button,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>display:none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.grid{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>gap:10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box-shadow:none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>border:1px solid #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>break-inside:avoid;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>page-break-inside:avoid;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;h1&gt;Product QR Codes&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="window.print()"&gt;Print QR Codes&lt;/button&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="container" class="grid"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">async function loadProducts(){</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>try{</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const response = await fetch('products.json?v=' + Date.now());</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const products = await response.json();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const container = document.getElementById('container');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>Object.keys(products).forEach(productCode =&gt; {</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const card = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>card.className = 'card';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const qrDiv = document.createElement('div');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>card.appendChild(qrDiv);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.appendChild(card);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>new QRCode(qrDiv,{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>text:`https://ujjwal81.github.io/Product/?id=${encodeURIComponent(productCode)}`,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>width:250,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>height:250</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>catch(error){</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.body.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Error Loading Products&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;${error.message}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">loadProducts();</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
