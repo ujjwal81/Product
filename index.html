@@ -179,9 +179,7 @@ const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export
 // ====== IMAGES ======
 // If the "Image" column in your sheet is filled in, that URL is used.
 // If it's EMPTY, the image path is built automatically from this folder
-// using the pattern: ModelName-ColorName.png (spaces -> hyphens, special
-// characters stripped). Upload your images to this folder with matching
-// names, e.g. a "Vive" model in "Pearl White" -> images/Vive-Pearl-White.png
+// using the row's Code, e.g. Code "VIVE-WHT-001" -> images/VIVE-WHT-001.png
 //
 // Leave as "images/" if your images folder sits next to this index.html
 // in the same GitHub repo. Otherwise use the full URL to that folder.
@@ -189,15 +187,8 @@ const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export
 const IMAGE_BASE_URL = "images/";
 const IMAGE_EXTENSION = ".png";
 
-function slugForFilename(text){
-    return (text || "")
-        .trim()
-        .replace(/[^a-zA-Z0-9\s-]/g, "")   // strip special characters
-        .replace(/\s+/g, "-");             // spaces -> hyphens
-}
-
-function buildImagePath(model, color){
-    return `${IMAGE_BASE_URL}${slugForFilename(model)}-${slugForFilename(color)}${IMAGE_EXTENSION}`;
+function buildImagePath(code){
+    return `${IMAGE_BASE_URL}${code}${IMAGE_EXTENSION}`;
 }
 
 // ====== END CONFIG ======
@@ -239,8 +230,9 @@ async function loadProductsFromSheets(){
 
         const model = (row["Model"] || "").trim();
         const color = (row["Color"] || "").trim();
+        const code = (row["Code"] || "").trim();
         const sheetImage = (row["Image"] || "").trim();
-        const resolvedImage = sheetImage || buildImagePath(model, color);
+        const resolvedImage = sheetImage || buildImagePath(code);
 
         if(!model) return;
 
@@ -249,7 +241,7 @@ async function loadProductsFromSheets(){
             products[model] = {
                 name: model,
                 price: row["MRP (INR)"] || "",
-                code: row["Code"] || "",
+                code: code,
                 category: row["Category"] || "",
                 subSection: row["Sub-Section"] || "",
                 size: row["Size / Running Length"] || "",
@@ -263,7 +255,7 @@ async function loadProductsFromSheets(){
 
         products[model].variants.push({
             color: color,
-            code: row["Code"] || "",
+            code: code,
             price: row["MRP (INR)"] || "",
             image: resolvedImage
         });
