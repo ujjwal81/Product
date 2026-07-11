@@ -172,9 +172,33 @@ const SHEET_GID = "2135797386";
 
 const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${SHEET_GID}`;
 
-// Your sheet has one row per color variant. Code is unique PER COLOR,
-// so rows are grouped into a single product page by "Model" instead.
-// The URL for a product page is: ?id=<Model name, URL-encoded>
+// Your sheet has one row per color variant. Rows are grouped into a
+// single product page by "Model". URL for a product page is:
+// ?model=<Model name, URL-encoded>
+
+// ====== IMAGES ======
+// If the "Image" column in your sheet is filled in, that URL is used.
+// If it's EMPTY, the image path is built automatically from this folder
+// using the pattern: ModelName-ColorName.png (spaces -> hyphens, special
+// characters stripped). Upload your images to this folder with matching
+// names, e.g. a "Vive" model in "Pearl White" -> images/Vive-Pearl-White.png
+//
+// Leave as "images/" if your images folder sits next to this index.html
+// in the same GitHub repo. Otherwise use the full URL to that folder.
+
+const IMAGE_BASE_URL = "images/";
+const IMAGE_EXTENSION = ".png";
+
+function slugForFilename(text){
+    return (text || "")
+        .trim()
+        .replace(/[^a-zA-Z0-9\s-]/g, "")   // strip special characters
+        .replace(/\s+/g, "-");             // spaces -> hyphens
+}
+
+function buildImagePath(model, color){
+    return `${IMAGE_BASE_URL}${slugForFilename(model)}-${slugForFilename(color)}${IMAGE_EXTENSION}`;
+}
 
 // ====== END CONFIG ======
 
@@ -214,6 +238,9 @@ async function loadProductsFromSheets(){
     rows.forEach(row => {
 
         const model = (row["Model"] || "").trim();
+        const color = (row["Color"] || "").trim();
+        const sheetImage = (row["Image"] || "").trim();
+        const resolvedImage = sheetImage || buildImagePath(model, color);
 
         if(!model) return;
 
@@ -228,17 +255,17 @@ async function loadProductsFromSheets(){
                 size: row["Size / Running Length"] || "",
                 description: row["Description"] || "",
                 notes: row["Notes / Must Order"] || "",
-                image: row["Image"] || "",
+                image: resolvedImage,
                 variants: []
             };
 
         }
 
         products[model].variants.push({
-            color: row["Color"] || "",
+            color: color,
             code: row["Code"] || "",
             price: row["MRP (INR)"] || "",
-            image: row["Image"] || ""
+            image: resolvedImage
         });
 
     });
